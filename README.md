@@ -33,7 +33,7 @@ python -m spacy download en_core_web_sm
 
 ```bash
 # Start the server
-python app.py
+uvicorn main:app --reload
 
 # Open browser to http://localhost:8000
 ```
@@ -79,6 +79,10 @@ Confidence is calculated based on how many event fields contain data:
 - 1/4 fields filled = 0.25
 
 Fields: subject, object, time, location
+
+### Example Usage
+
+![Event Extractor](assets/imgs/event_extractor.jpg)
 
 ## Dependencies
 
