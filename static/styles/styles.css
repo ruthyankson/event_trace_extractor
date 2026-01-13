@@ -1,0 +1,114 @@
+body {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    padding: 2.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #dfe4f9;
+}
+
+/* Add striped rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;  /* Light gray color for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: white;  /* White color for odd rows */
+}
+
+th {
+    background-color: #4CAF50;  /* Green background for table headers */
+    color: white;  /* White text color for headers */
+}
+
+/* Style for the button */
+button {
+    background-color: dodgerblue;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* Remove the default border */
+    padding: 10px 20px;         /* Add padding inside the button */
+    font-size: 16px;            /* Set the font size */
+    border-radius: 5px;         /* Round the corners */
+    cursor: pointer;           /* Change the cursor to a pointer */
+    transition: transform 0.2s, background-color 0.2s ease-in-out;  /* Transition effect for hover and click */
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: rgb(74, 164, 255);  /* Darker green on hover */
+}
+
+/* Active click effect */
+button:active {
+    transform: scale(0.98);  /* Shrink the button slightly to simulate a press */
+    background-color: rgb(74, 164, 255);  /* Even darker green when clicked */
+}
+
+/* Optional: Add focus effect for accessibility */
+button:focus {
+    outline: none;  /* Remove the default outline */
+    /* box-shadow: 0 0 5px 2px rgb(74, 163, 252);   Add a glow around the button  */
+}
+
+/* Style for the textarea */
+textarea {
+    width: 100%;                 /* Make it take up the full width of the form */
+    padding: 10px;               /* Add padding for comfortable typing */
+    font-size: 16px;             /* Set the font size */
+    border-radius: 5px;          /* Round the corners */
+    border: 2px solid #ddd;      /* Default border color */
+    resize: vertical;            /* Allow the user to resize vertically */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition for border and focus effect */
+}
+
+/* Focus state for the textarea */
+textarea:focus {
+    border-color: rgb(74, 164, 255);       /* Green border when focused */
+    box-shadow: 0 0 5px rgb(98, 176, 255);  /* Subtle glow effect around the textarea */
+    outline: none;               /* Remove default focus outline */
+}
+
+/* Invalid state for textarea (when form is empty) */
+textarea:invalid {
+    border: 2px solid red;       /* Red border for invalid state */
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    /* margin-top: 10px; */
+    display: none;             
+}
+
+
+.spacer {
+    padding: 1rem;
+}
+
+.spacer1 {
+    padding: 1.5rem;
+}
+
+
+hr {
+    color: #dfe4f9;
+}
