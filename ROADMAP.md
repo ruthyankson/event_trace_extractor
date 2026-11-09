@@ -32,12 +32,15 @@ real people's personal data.
 - [ ] Export to JSON and CSV
 - [ ] Timeline view in the web interface
 - [ ] Filter events by confidence and field
+- [ ] Keep the submitted text in the input box after extraction
 
 ## Milestone 5: Domain rule packs
 
 - [ ] Configurable YAML rules for triggers, time and location patterns
 - [ ] Starter packs for workplace safety, clinical, and disaster reports
 - [ ] Attach times and locations to the right event instead of the whole sentence
+- [ ] Recognise more location prepositions (for example "to", "near", "from")
+- [ ] Return full noun phrases for subjects and objects (for example "first aid", "wrong dose")
 
 ## Milestone 6: Launch v1.0
 

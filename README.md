@@ -8,7 +8,7 @@ Event Trace Extractor is a rule-based NLP web app built with Python, FastAPI, an
 Paste in a narrative and it returns a list of events, each with its trigger, subject,
 object, time, location, and a completeness score.
 
-![Event Trace Extractor web interface](assets/imgs/event_extractor.jpg)
+![Events extracted from a workplace incident report](assets/imgs/event_extractor.jpg)
 
 ## Why
 
@@ -59,34 +59,35 @@ export SPACY_FALLBACK_MODEL=en_core_web_sm
 
 ## Example
 
-**Input:**
+A synthetic workplace incident report:
 
 ```text
-John walked to the park yesterday. He met Sarah at noon.
+On Monday morning, a forklift operator struck a storage rack in the Surrey warehouse.
+The supervisor called first aid at 9:15 a.m. Paramedics transported the injured worker
+to Royal Columbian Hospital. The safety team inspected the rack on Tuesday.
 ```
 
-**Output:**
+The screenshot at the top of this page shows the events extracted from it. Each event
+is returned as a record like this:
 
 ```json
-[
-  {
-    "trigger": "walked",
-    "subject": ["John"],
-    "object": [],
-    "time": ["yesterday"],
-    "location": ["park"],
-    "confidence": 0.75
-  },
-  {
-    "trigger": "met",
-    "subject": ["He"],
-    "object": ["Sarah"],
-    "time": ["noon"],
-    "location": [],
-    "confidence": 0.75
-  }
-]
+{
+  "trigger": "transported",
+  "subject": ["Paramedics"],
+  "object": ["worker"],
+  "time": [],
+  "location": ["Royal Columbian Hospital"],
+  "confidence": 0.75
+}
 ```
+
+The example also shows where the extractor falls short today (output from `en_core_web_sm`):
+
+- "Surrey warehouse" is not detected as a location.
+- Objects are single words: "aid" instead of "first aid".
+- "Monday morning" is split into "Monday, morning".
+
+These gaps are listed under [Known limitations](#known-limitations) and in the [roadmap](ROADMAP.md).
 
 ## How it works
 
@@ -117,6 +118,11 @@ It measures how complete a record is, not how likely it is to be correct.
 
 - Times and locations are taken from the whole sentence, so events in the same sentence
   share them.
+  For example, in "The physician ordered additional monitoring overnight, and the hospital
+  reported the incident on Friday", both events receive "overnight" and "Friday".
+- Locations introduced by prepositions other than "in", "at" and "on" (such as "to the
+  park") are missed.
+- Subjects and objects are single head words rather than full noun phrases.
 - As a rule-based tool, it can produce false positives and miss events phrased unusually.
 - English only for now.
 
