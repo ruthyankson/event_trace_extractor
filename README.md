@@ -1,4 +1,4 @@
-# Event Extraction Tool
+# Event Trace Extractor
 
 A web-based tool for extracting structured narrative events from text, including triggers, entities, temporal information, and locations.
 
@@ -15,8 +15,8 @@ A web-based tool for extracting structured narrative events from text, including
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd event-extraction-tool
+git clone https://github.com/ruthyankson/event_trace_extractor.git
+cd event_trace_extractor
 
 # Create virtual environment
 python -m venv venv
@@ -74,7 +74,7 @@ uvicorn main:app --reload
 Confidence is calculated based on how many event fields contain data:
 
 - 4/4 fields filled = 1.0
-- - 3/4 fields filled = 0.75
+- 3/4 fields filled = 0.75
 - 2/4 fields filled = 0.5
 - 1/4 fields filled = 0.25
 

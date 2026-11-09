@@ -1,11 +1,3 @@
-# from fastapi import FastAPI, Form, Request
-# from fastapi.templating import Jinja2Templates
-# from fastapi.responses import HTMLResponse
-
-# import spacy
-# from pydantic import BaseModel
-# from typing import List
-# from fastapi.staticfiles import StaticFiles
 from __future__ import annotations
 
 import os
@@ -18,18 +10,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
-
-# # Initialize FastAPI app
-# app = FastAPI()
-
-# # Initialize spaCy NLP model
-# nlp = spacy.load("en_core_web_trf")
-
-# # Initialize Jinja2 template engine
-# templates = Jinja2Templates(directory="templates")
-
-# # Mount the 'static' directory so that files in it can be accessed directly via URL
-# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # -----------------------------
 # App and Templates

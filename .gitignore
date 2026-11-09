@@ -1,2 +1,11 @@
-*pycache*
-*env*
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+storyenv/
+venv/
+.venv/
+
+# Local secrets
+.env
